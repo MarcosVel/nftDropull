@@ -90,5 +90,9 @@ export const DescriptionTitle = styled.h4`
 `
 
 export const Description = styled.p`
+  margin-bottom: 32px;
+`
 
+export const CreatedDate = styled.span`
+  color: ${ COLORS.white };
 `

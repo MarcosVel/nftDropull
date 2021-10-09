@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import * as C from './styles'
 import api from '../../services/api';
+import { useDispatch } from 'react-redux';
 
 export default function Collections() {
+  const dispatch = useDispatch();
   const [ assets, setAssets ] = useState([]);
 
   useEffect(() => {
@@ -20,12 +22,19 @@ export default function Collections() {
     }
 
     loadApi()
-  }, [])
+  }, []);
+
+  function handleDetails(asset) {
+    dispatch({
+      type: 'GET_DETAILS',
+      asset
+    });
+  }
 
   return (
     <C.Container>
       { assets.map(asset => (
-        <C.Card key={ asset.id }>
+        <C.Card key={ asset.id } onClick={ () => handleDetails(asset) }>
           <C.Image src={ asset.image_url } />
           <C.NftInfo>
             <C.CreatorImg src={ asset.creator?.profile_img_url }></C.CreatorImg>
