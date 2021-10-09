@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from "../../colors";
+import { COLORS } from "../../utils/colors";
 
 export const Container = styled.div`
   display: grid;
@@ -39,12 +39,12 @@ export const ButtonsShare = styled.div`
   flex-direction: row;
 `
 
-export const EachButtonsShare = styled.button`
+export const EachButtonsShare = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 35px;
+  width: 33px;
+  height: 33px;
   background-color: transparent;
   color: ${ COLORS.gray };
   border: 1px solid ${ COLORS.gray };

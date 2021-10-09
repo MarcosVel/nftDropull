@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from "../../colors";
+import { COLORS } from "../../utils/colors";
 
 export const Container = styled.div`
   display: grid;
@@ -13,6 +13,12 @@ export const Card = styled.div`
   flex-direction: column;
   background-color: ${ COLORS.white };
   border-radius: 8px;
+  transition: .3s ease-in-out;
+  
+  &:hover { 
+    cursor: pointer;
+    box-shadow: 0 5px 30px #393939;
+  }
 `
 
 export const Image = styled.img`
