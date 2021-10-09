@@ -5,18 +5,17 @@ export const Container = styled.div`
   display: grid;
   /* grid-template-columns: repeat(3, 1fr); */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 70px;
 `
 
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${COLORS.white};
+  background-color: ${ COLORS.white };
   border-radius: 8px;
 `
 
 export const Image = styled.img`
-  /* width: 300px; */
   width: 100%;
   height: 300px;
   border-top-left-radius: inherit;
@@ -28,7 +27,7 @@ export const NftInfo = styled.div`
   display: flex;
   padding: 16px;
   align-items: center;
-  min-height: 46px;
+  height: auto;
 `
 
 export const CreatorImg = styled.img`
@@ -43,7 +42,7 @@ export const ArtCreator = styled.div`
 `
 
 export const ArtName = styled.h3`
-  color: #000;
+  color: ${ COLORS.black };
   font-size: 16px;
   white-space: nowrap;
   overflow: hidden;
@@ -52,7 +51,7 @@ export const ArtName = styled.h3`
 
 
 export const CreatorName = styled.p`
-  color: ${COLORS.blue};
+  color: ${ COLORS.blue };
   font-size: 14px;
   font-weight: 500;
   white-space: nowrap;

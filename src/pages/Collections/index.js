@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import api from '../../services/api';
 import * as C from './styles'
+import api from '../../services/api';
 
 export default function Collections() {
   const [ assets, setAssets ] = useState([]);
@@ -35,8 +35,7 @@ export default function Collections() {
             </C.ArtCreator>
           </C.NftInfo>
         </C.Card>
-      ))
-      }
+      )) }
     </C.Container>
   )
 }
