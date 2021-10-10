@@ -1,5 +1,6 @@
+import { Accordion, AccordionDetails, AccordionSummary } from "@material-ui/core";
 import styled from "styled-components";
-import { COLORS } from "../../colors";
+import { COLORS } from "../../utils/colors";
 
 export const Container = styled.div`
   display: grid;
@@ -14,6 +15,7 @@ export const Image = styled.img`
   max-height: 500px;
   object-fit: fill;
   margin: 0 auto;
+  border-radius: 4px;
 `
 
 export const NftInfo = styled.div`
@@ -39,12 +41,12 @@ export const ButtonsShare = styled.div`
   flex-direction: row;
 `
 
-export const EachButtonsShare = styled.button`
+export const EachButtonsShare = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 35px;
+  width: 33px;
+  height: 33px;
   background-color: transparent;
   color: ${ COLORS.gray };
   border: 1px solid ${ COLORS.gray };
@@ -58,10 +60,15 @@ export const EachButtonsShare = styled.button`
   }
 `
 
-export const ArtCreator = styled.div`
+export const Owner = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 32px;
+`
+
+export const Creator = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 export const CreatorImg = styled.img`
@@ -85,10 +92,58 @@ export const CreatorName = styled.span`
   font-weight: 500;
 `
 
-export const DescriptionTitle = styled.h4`
-  margin-bottom: 8px;
+export const Label = styled.h4`
+  line-height: 0;
 `
 
 export const Description = styled.p`
+  margin-top: 16px;
+  margin-bottom: 32px;
+`
 
+export const CreatedDate = styled.span`
+  color: ${ COLORS.white };
+`
+
+export const AccordionStyled = styled(Accordion)`
+  border-radius: 4px !important;
+  background-color: ${ COLORS.lightBlack } !important;
+  margin-top: 24px !important;
+`
+
+export const AccordionSummaryStyled = styled(AccordionSummary)`
+  color: ${ COLORS.white } !important;
+  polygon { 
+    fill: ${ COLORS.white } !important;
+  }
+`
+
+export const AccordionDetailsStyled = styled(AccordionDetails)`
+  padding: 16px !important;
+  border-top: 1px solid ${ COLORS.gray } !important;
+  display: flex;
+  justify-content: space-between;
+`
+
+export const LeftSideDetails = styled.div`
+`
+
+export const RightSideDetails = styled.div`
+
+`
+
+export const DetailsLabel = styled.p`
+  color: ${ COLORS.white } !important;
+  margin-bottom: 8px;
+`
+
+
+export const TextDetails = styled.p`
+  color: ${ COLORS.gray } !important;
+  margin-bottom: 8px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: end;
 `
