@@ -18,6 +18,7 @@ export default function Collections() {
           order_direction: 'desc',
         }
       });
+
       setAssets(response.data.assets);
 
       console.log(response.data.assets);
@@ -41,9 +42,9 @@ export default function Collections() {
         <C.Card key={ asset.id } onClick={ () => handleDetails(asset) }>
           <C.Image src={ asset.image_url } />
           <C.NftInfo>
-            <C.CreatorImg src={ asset.creator?.profile_img_url } />
+            <C.CreatorImg src={ asset.creator?.profile_img_url } alt={ asset.creator?.user?.username } />
             <C.ArtCreator>
-              <C.ArtName title={ asset.name }>{ asset.name }</C.ArtName>
+              <C.ArtName title={ asset.name != null ? asset.name : 'Nome não disponível' }>{ asset.name != null ? asset.name : '*SemNome*' }</C.ArtName>
               <C.CreatorName title={ asset.creator?.user?.username != null ? asset.creator?.user?.username : 'O usuário esqueceu do nome 😂' }>
                 { asset.creator?.user?.username != null ? asset.creator?.user?.username : '👻' }
               </C.CreatorName>
