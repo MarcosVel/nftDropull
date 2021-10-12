@@ -45,7 +45,7 @@ export const Card = styled.div`
   
   &:hover { 
     cursor: pointer;
-    box-shadow: 0 5px 30px #393939;
+    box-shadow: 0 5px 40px #353535;
   }
 `
 

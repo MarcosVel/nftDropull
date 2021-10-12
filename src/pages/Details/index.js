@@ -19,7 +19,7 @@ export default function Details() {
             {/* NOME E BOTÕES EXTERNOS */ }
             <C.NftInfo>
               <C.NameShare>
-                <C.ArtName title={ detail.name }>{ detail.name }</C.ArtName>
+                <C.ArtName title={ detail.name }>{ detail.name != null ? detail.name : '*Sem nome*' }</C.ArtName>
                 <C.ButtonsShare>
                   <C.EachButtonsShare
                     title='Link externo'
@@ -79,16 +79,20 @@ export default function Details() {
                   <C.Label>Detalhes</C.Label>
                 </C.AccordionSummaryStyled>
                 <C.AccordionDetailsStyled>
-                  <C.LeftSideDetails>
-                    <C.DetailsLabel>Endereço de contrato</C.DetailsLabel>
-                    <C.DetailsLabel>Token ID</C.DetailsLabel>
-                    <C.DetailsLabel>Token Standard</C.DetailsLabel>
-                  </C.LeftSideDetails>
-                  <C.RightSideDetails>
-                    <C.TextDetails title={ detail.asset_contract?.address }>{ detail.asset_contract?.address }</C.TextDetails>
-                    <C.TextDetails title={ detail.token_id }>{ detail.token_id }</C.TextDetails>
-                    <C.TextDetails title={ detail.asset_contract?.schema_name }>{ detail.asset_contract?.schema_name }</C.TextDetails>
-                  </C.RightSideDetails>
+                  <C.List>
+                    <C.RowList>
+                      <C.DetailsLabel>Endereço de contrato</C.DetailsLabel>
+                      <C.TextDetails title={ detail.asset_contract?.address }>{ detail.asset_contract?.address }</C.TextDetails>
+                    </C.RowList>
+                    <C.RowList>
+                      <C.DetailsLabel>Token ID</C.DetailsLabel>
+                      <C.TextDetails title={ detail.token_id }>{ detail.token_id }</C.TextDetails>
+                    </C.RowList>
+                    <C.RowList>
+                      <C.DetailsLabel>Token Standard</C.DetailsLabel>
+                      <C.TextDetails title={ detail.asset_contract?.schema_name }>{ detail.asset_contract?.schema_name }</C.TextDetails>
+                    </C.RowList>
+                  </C.List>
                 </C.AccordionDetailsStyled>
               </C.AccordionStyled>
 

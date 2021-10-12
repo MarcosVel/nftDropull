@@ -34,16 +34,26 @@ export const SearchInput = styled.input`
   padding: 15px;
 `
 
-export const ResetButton = styled.button`
-  background-color: ${ COLORS.lightBlack };
+export const ButtonsContainer = styled.div`
+  display: flex;
+
+  @media(max-width: 460px) { 
+    width: 100%;
+    margin-top: 8px;
+    gap: 10px;
+  }
+`
+
+export const Button = styled.button`
+  background-color: ${ props => props.backgroundColor };
   color: ${ COLORS.white };
   font-size: 20px;
-  border: none;
   padding: 15px;
   border-radius: 10px;
   border: 2px solid ${ COLORS.gray };
-  opacity: .7;
+  opacity: .9;
   margin-left: 8px;
+  transition: .15s;
 
   &:hover { 
     opacity: 1;
@@ -51,7 +61,6 @@ export const ResetButton = styled.button`
 
   @media(max-width: 460px) { 
     width: 100%;
-    margin-top: 8px;
     margin-left: 0;
   }
 `
