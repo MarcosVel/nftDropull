@@ -73,10 +73,18 @@ export default function Collections() {
     <C.Container>
       <InputSearch onEnter={ handleSearchUser } onReset={ handleResetInput } />
       {
+        // 0xfb95674aa3ed785f218a443281481d5b74c2cc8a
         searchingUser === true &&
-        <C.CreatorName>
-          Nome: { assets[ 0 ].owner?.user?.username }
-        </C.CreatorName>
+        <C.ContainerCollectionPerfil>
+          <C.ContainerUserPerfil>
+            <C.CreatorImg src={ assets[ 0 ].owner?.profile_img_url } alt={ assets[ 0 ].owner?.user?.username } />
+            <C.UserNamePerfil>
+              <C.Label fontSize={ 14 }>Nome:</C.Label>
+              <C.CreatorName fontSize={ 18 }>{ assets[ 0 ].owner?.user?.username }</C.CreatorName>
+            </C.UserNamePerfil>
+          </C.ContainerUserPerfil>
+          <C.Label fontSize={ 24 }>Coleção do usuário:</C.Label>
+        </C.ContainerCollectionPerfil>
       }
       <C.ContainerNfts>
         { assets.map(asset => (
@@ -86,7 +94,7 @@ export default function Collections() {
               <C.CreatorImg src={ asset.creator?.profile_img_url } alt={ asset.creator?.user?.username } />
               <C.ArtCreator>
                 <C.ArtName title={ asset.name != null ? asset.name : 'Nome não disponível' }>{ asset.name != null ? asset.name : '*SemNome*' }</C.ArtName>
-                <C.CreatorName title={ asset.creator?.user?.username != null ? asset.creator?.user?.username : 'O usuário esqueceu do nome 😂' }>
+                <C.CreatorName fontSize={ 14 } title={ asset.creator?.user?.username != null ? asset.creator?.user?.username : 'O usuário esqueceu do nome 😂' }>
                   { asset.creator?.user?.username != null ? asset.creator?.user?.username : '👻' }
                 </C.CreatorName>
               </C.ArtCreator>

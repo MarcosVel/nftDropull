@@ -22,7 +22,7 @@ export const InputContainer = styled.div`
   background-color: ${ COLORS.lightBlack };
   border: 2px solid ${ COLORS.gray };
   border-radius: 10px;
-  `
+`
 
 export const SearchInput = styled.input`
   flex: 1;
@@ -43,6 +43,7 @@ export const ResetButton = styled.button`
   border-radius: 10px;
   border: 2px solid ${ COLORS.gray };
   opacity: .7;
+  margin-left: 8px;
 
   &:hover { 
     opacity: 1;
@@ -51,5 +52,6 @@ export const ResetButton = styled.button`
   @media(max-width: 460px) { 
     width: 100%;
     margin-top: 8px;
+    margin-left: 0;
   }
 `
