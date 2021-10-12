@@ -1,6 +1,7 @@
 import * as C from './styles'
 import { RiUserSearchLine } from "react-icons/ri";
 import { useState } from 'react';
+import { COLORS } from '../../utils/colors';
 
 export default function InputSearch({ onEnter, onReset }) {
   const [ inputText, setInputText ] = useState('');
@@ -9,6 +10,12 @@ export default function InputSearch({ onEnter, onReset }) {
     if ((e.code === 'Enter' || e.code === 'NumpadEnter') && inputText !== '') {
       onEnter(inputText);
     }
+  }
+
+  function searchUser(e) {
+    e.preventDefault();
+
+    inputText !== '' && onEnter(inputText);
   }
 
   function resetField(e) {
@@ -29,7 +36,10 @@ export default function InputSearch({ onEnter, onReset }) {
           onKeyUp={ handleKeyUp }
         />
       </C.InputContainer>
-      <C.ResetButton onClick={ resetField }>Limpar</C.ResetButton>
+      <C.ButtonsContainer>
+        <C.Button onClick={ resetField } backgroundColor={ COLORS.lightBlack }>Limpar</C.Button>
+        <C.Button onClick={ searchUser } backgroundColor={ COLORS.green }>Buscar</C.Button>
+      </C.ButtonsContainer>
     </C.Container >
   )
 }

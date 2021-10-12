@@ -16,7 +16,7 @@ export default function Collections() {
     async function loadApi() {
       const response = await api.get('/assets', {
         params: {
-          limit: 20,
+          limit: 21,
           order_direction: 'desc',
         }
       });
@@ -59,7 +59,7 @@ export default function Collections() {
   function handleResetInput() {
     api.get('/assets', {
       params: {
-        limit: 20,
+        limit: 21,
         order_direction: 'desc',
       }
     })
@@ -74,6 +74,8 @@ export default function Collections() {
       <InputSearch onEnter={ handleSearchUser } onReset={ handleResetInput } />
       {
         // 0xfb95674aa3ed785f218a443281481d5b74c2cc8a
+        // 0x8676f92151771425c5a506a60105ee1a8e877456
+        // 0xb54cc5a8190ccb0be025373f876ef778a79a6ddc
         searchingUser === true &&
         <C.ContainerCollectionPerfil>
           <C.ContainerUserPerfil>

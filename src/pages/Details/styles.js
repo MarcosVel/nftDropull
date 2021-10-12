@@ -7,6 +7,7 @@ export const Container = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 580px));
   justify-content: center;
   grid-gap: 30px;
+  margin-top: 32px;
 `
 
 export const Image = styled.img`
@@ -20,6 +21,10 @@ export const Image = styled.img`
 
 export const NftInfo = styled.div`
   padding: 8px 32px;
+
+  @media (max-width: 560px) {
+    padding: 8px 0;
+  }
 `
 
 export const NameShare = styled.div`
@@ -121,15 +126,13 @@ export const AccordionSummaryStyled = styled(AccordionSummary)`
 export const AccordionDetailsStyled = styled(AccordionDetails)`
   padding: 16px !important;
   border-top: 1px solid ${ COLORS.gray } !important;
+`
+
+export const List = styled.ul``
+
+export const RowList = styled.li`
   display: flex;
   justify-content: space-between;
-`
-
-export const LeftSideDetails = styled.div`
-`
-
-export const RightSideDetails = styled.div`
-
 `
 
 export const DetailsLabel = styled.p`
@@ -141,7 +144,7 @@ export const DetailsLabel = styled.p`
 export const TextDetails = styled.p`
   color: ${ COLORS.gray } !important;
   margin-bottom: 8px;
-  max-width: 200px;
+  max-width: 185px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
