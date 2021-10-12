@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { COLORS } from "../../utils/colors";
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+`
+
+export const ContainerNfts = styled.div`
   display: grid;
   /* grid-template-columns: repeat(3, 1fr); */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
