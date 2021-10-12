@@ -2,8 +2,36 @@ import styled from "styled-components";
 import { COLORS } from "../../utils/colors";
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+`
+
+export const ContainerCollectionPerfil = styled.div`
+  margin-bottom: 16px;
+`
+
+export const ContainerUserPerfil = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 32px;
+  background-color: ${ COLORS.lightBlack };
+  border-radius: 10px;
+  margin-bottom: 24px;
+`
+
+export const UserNamePerfil = styled.div`
+  flex-direction: column;
+  margin-left: 8px;
+`
+
+export const Label = styled.h5`
+  color: ${ COLORS.white };
+  font-size: ${ props => props.fontSize }px;
+`
+
+export const ContainerNfts = styled.div`
   display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 70px;
 `
@@ -55,10 +83,9 @@ export const ArtName = styled.h3`
   text-overflow: ellipsis;
 `
 
-
 export const CreatorName = styled.p`
   color: ${ COLORS.blue };
-  font-size: 14px;
+  font-size: ${ props => props.fontSize }px;
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;

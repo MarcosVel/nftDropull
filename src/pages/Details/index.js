@@ -1,7 +1,7 @@
 import * as C from './styles'
-import { FiExternalLink, FiShare2 } from "react-icons/fi";
 import { useSelector } from 'react-redux';
 import { format, parseISO } from 'date-fns';
+import { FiExternalLink, FiShare2 } from "react-icons/fi";
 import { FcExpand } from "react-icons/fc";
 
 export default function Details() {
