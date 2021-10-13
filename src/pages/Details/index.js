@@ -62,6 +62,7 @@ export default function Details() {
                 <C.CreatedDate>{ format(parseISO(detail.asset_contract?.created_date), 'dd/MM/yyyy') }</C.CreatedDate>
               </C.CreatedBy>
 
+              {/* ACCORDION CRIADOR */ }
               <C.AccordionStyled expanded>
                 <C.AccordionSummaryStyled>
                   <C.Label>Criador</C.Label>
@@ -80,6 +81,8 @@ export default function Details() {
                   </C.Creator>
                 </C.AccordionDetailsStyled>
               </C.AccordionStyled>
+
+              {/* ACCORDION DETALHES */ }
               <C.AccordionStyled>
                 <C.AccordionSummaryStyled
                   expandIcon={ <FcExpand /> }

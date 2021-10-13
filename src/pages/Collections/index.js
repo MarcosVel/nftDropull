@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import InputSearch from '../../components/InputSearch';
 import api from '../../services/api';
 import * as C from './styles';
+import WithoutImage from '../../assets/imgindis.png';
 
 export default function Collections() {
   const dispatch = useDispatch();
@@ -71,10 +72,14 @@ export default function Collections() {
   return (
     <C.Container>
       <InputSearch onEnter={ handleSearchUser } onReset={ handleResetInput } />
+      {/* SESSÃO DE PERFIL DO USUÁRIO */ }
       {
-        // 0xfb95674aa3ed785f218a443281481d5b74c2cc8a
-        // 0x8676f92151771425c5a506a60105ee1a8e877456
-        // 0xb54cc5a8190ccb0be025373f876ef778a79a6ddc
+        /**
+         * EXEMPLO DE ENDEREÇOS DE CARTEIRAS PARA PESQUISAR 
+         * 0xfb95674aa3ed785f218a443281481d5b74c2cc8a
+         * 0x8676f92151771425c5a506a60105ee1a8e877456
+         * 0xb54cc5a8190ccb0be025373f876ef778a79a6ddc
+         */
         searchingUser === true &&
         <>
           { assets[ 0 ]?.owner?.user?.username != null ?
@@ -95,10 +100,12 @@ export default function Collections() {
           }
         </>
       }
+
+      {/* NFTs / COLEÇÕES DE NFTs DO USUÁRIO PESQUISADO */ }
       <C.ContainerNfts>
         { assets.map(asset => (
           <C.Card key={ asset.id } onClick={ () => handleDetails(asset) }>
-            <C.Image src={ asset.image_url } />
+            <C.Image src={ asset.image_url != null ? asset.image_url : WithoutImage } alt={ asset.name } />
             <C.NftInfo>
               <C.CreatorImg src={ asset.creator?.profile_img_url } alt={ asset.creator?.user?.username } />
               <C.ArtCreator>
