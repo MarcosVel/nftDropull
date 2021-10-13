@@ -10,8 +10,9 @@ export const Container = styled.div`
     margin-left: 15px;
   }
 
-  @media(max-width: 460px) { 
+  @media(max-width: 560px) { 
     flex-direction: column;
+    margin-bottom: 32px;
   }
 `
 
@@ -37,7 +38,7 @@ export const SearchInput = styled.input`
 export const ButtonsContainer = styled.div`
   display: flex;
 
-  @media(max-width: 460px) { 
+  @media(max-width: 560px) { 
     width: 100%;
     margin-top: 8px;
     gap: 10px;
@@ -59,7 +60,7 @@ export const Button = styled.button`
     opacity: 1;
   }
 
-  @media(max-width: 460px) { 
+  @media(max-width: 560px) { 
     width: 100%;
     margin-left: 0;
   }

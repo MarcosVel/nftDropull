@@ -4,7 +4,11 @@ import { COLORS } from "../../utils/colors";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
+  padding-top: 32px;
+
+  @media(max-width: 560px) { 
+    padding-top: 8px;
+  }
 `
 
 export const ContainerCollectionPerfil = styled.div`
@@ -34,6 +38,10 @@ export const ContainerNfts = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 70px;
+
+  @media(max-width: 560px) {
+    grid-gap: 55px;
+  }
 `
 
 export const Card = styled.div`
@@ -42,10 +50,11 @@ export const Card = styled.div`
   background-color: ${ COLORS.white };
   border-radius: 8px;
   transition: .3s ease-in-out;
+  box-shadow: 0 5px 40px ${ COLORS.boxShadow };
   
   &:hover { 
+    box-shadow: 0 5px 40px ${ COLORS.boxShadowHover };
     cursor: pointer;
-    box-shadow: 0 5px 40px #353535;
   }
 `
 

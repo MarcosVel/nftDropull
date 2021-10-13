@@ -5,4 +5,6 @@ export const COLORS = {
   black: '#121212',
   gray: '#707a83',
   lightBlack: '#303236',
+  boxShadow: '#27282b',
+  boxShadowHover: '#303236',
 }

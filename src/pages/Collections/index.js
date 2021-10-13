@@ -8,7 +8,7 @@ import InputSearch from '../../components/InputSearch';
 export default function Collections() {
   const dispatch = useDispatch();
   const [ assets, setAssets ] = useState([]);
-  const [ searchingUser, setSearchUser ] = useState(false);
+  const [ searchingUser, setSearchingUser ] = useState(false);
 
   const history = useHistory();
 
@@ -49,7 +49,10 @@ export default function Collections() {
       })
         .then(response => {
           setAssets(response.data.assets);
-          setSearchUser(true);
+          setSearchingUser(true);
+        })
+        .catch(error => {
+          alert('Endereço inválido, tente por exemplo: 0x8676f92151771425c5a506a60105ee1a8e877456')
         })
     } catch (err) {
       alert('Erro ao buscar usuário, tente novamente.')
@@ -65,7 +68,7 @@ export default function Collections() {
     })
       .then(response => {
         setAssets(response.data.assets);
-        setSearchUser(false);
+        setSearchingUser(false);
       })
   }
 
@@ -77,16 +80,24 @@ export default function Collections() {
         // 0x8676f92151771425c5a506a60105ee1a8e877456
         // 0xb54cc5a8190ccb0be025373f876ef778a79a6ddc
         searchingUser === true &&
-        <C.ContainerCollectionPerfil>
-          <C.ContainerUserPerfil>
-            <C.CreatorImg src={ assets[ 0 ].owner?.profile_img_url } alt={ assets[ 0 ].owner?.user?.username } />
-            <C.UserNamePerfil>
-              <C.Label fontSize={ 14 }>Nome:</C.Label>
-              <C.CreatorName fontSize={ 18 }>{ assets[ 0 ].owner?.user?.username }</C.CreatorName>
-            </C.UserNamePerfil>
-          </C.ContainerUserPerfil>
-          <C.Label fontSize={ 24 }>Coleção do usuário:</C.Label>
-        </C.ContainerCollectionPerfil>
+        <>
+          { assets[ 0 ]?.owner?.user?.username != null ?
+            <C.ContainerCollectionPerfil>
+              <C.ContainerUserPerfil>
+                <C.CreatorImg src={ assets[ 0 ]?.owner?.profile_img_url } alt={ assets[ 0 ]?.owner?.user?.username } />
+                <C.UserNamePerfil>
+                  <C.Label fontSize={ 14 }>Nome:</C.Label>
+                  <C.CreatorName fontSize={ 18 }>{ assets[ 0 ]?.owner?.user?.username }</C.CreatorName>
+                </C.UserNamePerfil>
+              </C.ContainerUserPerfil>
+              <C.Label fontSize={ 24 }>Coleção do usuário:</C.Label>
+            </C.ContainerCollectionPerfil>
+            :
+            <C.ContainerUserPerfil>
+              <C.Label fontSize={ 26 }>Usuário não encontrado</C.Label>
+            </C.ContainerUserPerfil>
+          }
+        </>
       }
       <C.ContainerNfts>
         { assets.map(asset => (
