@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
-import * as C from './styles'
-import api from '../../services/api';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import InputSearch from '../../components/InputSearch';
+import api from '../../services/api';
+import * as C from './styles';
 
 export default function Collections() {
   const dispatch = useDispatch();
@@ -22,8 +22,6 @@ export default function Collections() {
       });
 
       setAssets(response.data.assets);
-
-      console.log(response.data.assets);
     }
 
     loadApi()
@@ -39,8 +37,6 @@ export default function Collections() {
   }
 
   async function handleSearchUser(text) {
-    // console.log(text)
-
     try {
       api.get('/assets', {
         params: {

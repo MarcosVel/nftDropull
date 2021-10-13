@@ -1,7 +1,7 @@
-import * as C from './styles'
-import { RiUserSearchLine } from "react-icons/ri";
 import { useState } from 'react';
+import { RiUserSearchLine } from "react-icons/ri";
 import { COLORS } from '../../utils/colors';
+import * as C from './styles';
 
 export default function InputSearch({ onEnter, onReset }) {
   const [ inputText, setInputText ] = useState('');
