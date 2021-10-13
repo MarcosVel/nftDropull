@@ -8,6 +8,9 @@ export const Container = styled.div`
   justify-content: center;
   grid-gap: 30px;
   margin-top: 32px;
+  @media(max-width: 560px) {
+    margin-top: 8px;
+  }
 `
 
 export const Image = styled.img`
@@ -83,6 +86,10 @@ export const CreatorImg = styled.img`
   margin-right: 8px;
 `
 
+export const CreatorInfo = styled.div`
+  display: grid;
+`
+
 export const CreatedBy = styled.p`
   color: ${ COLORS.gray };
   font-size: 16px;
@@ -139,7 +146,6 @@ export const DetailsLabel = styled.p`
   color: ${ COLORS.white } !important;
   margin-bottom: 8px;
 `
-
 
 export const TextDetails = styled.p`
   color: ${ COLORS.gray } !important;

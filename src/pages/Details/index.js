@@ -23,15 +23,15 @@ export default function Details() {
                 <C.ButtonsShare>
                   <C.EachButtonsShare
                     title='Link externo'
-                    href={ detail.external_link }
+                    href={ detail.permalink }
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <FiExternalLink size={ 22 } />
                   </C.EachButtonsShare>
                   <C.EachButtonsShare
-                    title='Link permanente'
-                    href={ detail.permalink }
+                    title='Compartilhar'
+                    href={ detail.external_link }
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -64,11 +64,14 @@ export default function Details() {
                 <C.AccordionDetailsStyled>
                   <C.Creator>
                     <C.CreatorImg src={ detail.creator?.profile_img_url } alt={ detail.creator?.user?.username } />
-                    <C.CreatedBy>Criado por&nbsp;
-                      <C.CreatorName title={ detail.creator?.user?.username != null ? detail.creator?.user?.username : 'O usuário esqueceu do nome 😂' }>
-                        { detail.creator?.user?.username != null ? detail.creator?.user?.username : '👻' }
-                      </C.CreatorName>
-                    </C.CreatedBy>
+                    <C.CreatorInfo>
+                      <C.CreatedBy>Criado por&nbsp;
+                        <C.CreatorName title={ detail.creator?.user?.username != null ? detail.creator?.user?.username : 'O usuário esqueceu do nome 😂' }>
+                          { detail.creator?.user?.username != null ? detail.creator?.user?.username : '👻' }
+                        </C.CreatorName>
+                      </C.CreatedBy>
+                      <C.CreatedBy>{ detail.creator?.address }</C.CreatedBy>
+                    </C.CreatorInfo>
                   </C.Creator>
                 </C.AccordionDetailsStyled>
               </C.AccordionStyled>
