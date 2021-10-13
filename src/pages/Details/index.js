@@ -1,16 +1,21 @@
-import * as C from './styles'
-import { useSelector } from 'react-redux';
 import { format, parseISO } from 'date-fns';
-import { FiExternalLink, FiShare2 } from "react-icons/fi";
 import { FcExpand } from "react-icons/fc";
+import { FiChevronLeft, FiExternalLink, FiShare2 } from "react-icons/fi";
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
+import * as C from './styles';
 
 export default function Details() {
   const details = useSelector(state => state.detail);
 
-  console.log('Detalhes: ', details);
+  const history = useHistory();
 
   return (
     <>
+      <C.BtnBack onClick={ () => history.goBack() }>
+        <FiChevronLeft size={ 20 } />
+        Voltar
+      </C.BtnBack>
       {
         details.map(detail => (
           <C.Container key={ detail.id }>

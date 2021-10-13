@@ -7,9 +7,28 @@ export const Container = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 580px));
   justify-content: center;
   grid-gap: 30px;
-  margin-top: 32px;
+  margin-top: 16px;
+  `
+
+export const BtnBack = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: ${ COLORS.white };
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 16px;
+  opacity: .7;
+  transition: .3s ease;
+  
   @media(max-width: 560px) {
     margin-top: 8px;
+  }
+
+  &:hover {
+    opacity: 1;
   }
 `
 
